@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Título</title>
+	</head>
+	
+	<body>
+		<form action="busca.php" method="GET">
+			<input type="text" name="palavra">
+			<input type="submit" value="busca">
+		</form>
+	</body>
+	
+</html>

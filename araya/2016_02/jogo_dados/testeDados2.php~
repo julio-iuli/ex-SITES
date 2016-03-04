@@ -1,0 +1,8 @@
+<?php
+
+include_once 'Dado.class.php';
+
+$d1 = new Dado(10);
+echo $d1->valor;
+
+?>
