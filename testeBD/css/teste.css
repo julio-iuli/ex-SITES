@@ -1,0 +1,5 @@
+
+label {display: block; float:left; }
+label, input { width: 140px; margin: 5px 0; }
+form { font-size:20; }
+div { width: 200px; margin-left: auto; margin-right: auto; }
