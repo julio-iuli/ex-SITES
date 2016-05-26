@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Aula 29 - LOCALIZADOR DE POLTRONAS</title>
+		<script type="text/javascript">
+			window.onload = function() {
+			carregarPoltronas();
+			}
+			var poltrona = [false, true, true, false, false, true, false, true, true, false];
+			function carregarPoltronas() {
+				var imagens = document.getElementsByTagName("img");
+				for (var i=0; i<imagens.length; i++) {
+					if(poltrona[i]){
+					imagens[i].src = "img/poltrona_livre.png";
+					imagens[i].onclick = function(){
+						this.src = "img/poltrona_selecionada.png";
+					};
+					
+					} else {
+					imagens[i].src = "img/poltrona_ocupada.png";
+					}
+
+				}
+			}
+			
+			function selecionarPoltrona() {
+				var imagens = document.getElementsByTagName("img");
+				for(var i=0; i<poltrona.length; i++) {
+					if(poltrona[i]) {
+						imagens[i].src = "img/poltrona_selecionada.png";
+					}
+				}
+			}
+			
+		</script>
+
+	</head>
+
+	<body>
+		<h1>Poltronas</h1>
+		<div>
+			<a><img  /></a>
+			<a><img /></a>
+			<a><img /></a>
+			<a><img /></a>
+			<a><img /></a>
+			<a><img /></a>
+			<a><img /></a>
+			<a><img /></a>
+			<a><img /></a>
+			<a><img /></a>
+		</div>
+		<a href="#" onclick="selecionarPoltrona();">Selecionar Poltrona</a>
+	</body>
+
+
+</html>

@@ -22,6 +22,8 @@
     return json_encode($arr);
     }
     
-    //echo pegarJson();
+    include 'funcoesJson.php';
+    echo getEstadosJson() . '<br>';
+    echo getCidadesJson('SP');
 
 ?>

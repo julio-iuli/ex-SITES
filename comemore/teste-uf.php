@@ -10,15 +10,19 @@ function estadosJson() {
         
         //$estados[] = $row;
     }
-    
+    $estados2 = array();
     foreach($estados as $key => $estado){
         //echo utf8_encode($estado['ds_estado']) . '<br>';
         //echo $estados[$key]['ds_estado'] . '<br>';
         $estados[$key]['ds_estado'] = utf8_encode($estado['ds_estado']);
+        //echo $estados[$key]['ds_estado'] . ":" . $estados[$key]['id_uf'] . '<br>';
+        $estados2[] = array('label' => $estados[$key]['ds_estado'], 'value' => $estados[$key]['id_uf']);
     }
     
-    // var_dump($estados);
-    return json_encode($estados);
+    
+    
+    return json_encode($estados2);
+    
 }
 /*
     var_dump($estados);

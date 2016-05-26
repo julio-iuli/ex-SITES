@@ -1,0 +1,28 @@
+h1 {
+	font-weight:bold;
+}
+
+h2 {
+	font-style: italic;
+}
+
+.titulo {
+	color:blue;
+}
+
+img {
+	width:200px;
+}
+
+div {
+	width:300px;
+	border: 5px dashed black;
+}
+
+.altura{
+	height:100px;
+}
+
+.largura{
+	width:300px;
+}
