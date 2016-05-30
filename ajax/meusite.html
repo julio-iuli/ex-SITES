@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Meu site</title>
+        <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/ajaxenderecos.js"></script>
+
+    </head>
+    <body>
+        <h1>Testando Ajax</h1>
+        <div>
+            <form action="" method="GET">
+            <h2>Conteúdo apresentado</h2>
+            
+            <label>estado</label>
+            <input id="inputestado" type="text">
+            <input id="hiddenestado" type="hidden" name="id_uf">
+            
+            <label>cidade</label>
+            <input id="inputcidade" type="text"/>
+
+            <label>bairro</label>
+            <input id="inputbairro" type="text" name="ds_bairro"/>
+
+            <label>logradouro</label>
+            <input id="inputlogradouro" type="text" name="ds_logradouro"/>
+            
+            <input type="submit" value="ENVIAR"/>
+            </form>
+
+        </div>
+            <script> /*
+                function carregarEstados(){
+                    var ajax;
+                    ajax = new XMLHttpRequest();
+                    ajax.onreadystatechange = function(){
+                        if (ajax.readyState == 4 && ajax.status == 200){
+                            var resp = ajax.responseText;
+                            var split = resp.split(">", 2);
+                            //alert(split[1]);
+                            var obj = JSON.parse(split[1]);
+                            //alert(obj);
+                            $("#inputestado").autocomplete("option", "source", obj);
+                        }
+                    };
+                    ajax.open("GET", "servidor.php?estados=true", true);
+                    ajax.send();
+                }
+                
+                function carregarCidades(id_uf){
+                    var ajax;
+                    ajax = new XMLHttpRequest();
+                    ajax.onreadystatechange = function(){
+                        if (ajax.readyState == 4 && ajax.status == 200){
+                            var resp = ajax.responseText;
+                            var split = resp.split(">", 2);
+                            //alert(split[1]);
+                            var obj = JSON.parse(split[1]);
+                            //alert(obj);
+                            $("#inputcidade").autocomplete("option", "source", obj);
+                        }
+                    };
+                    //alert("servidor.php?id_uf="+id_uf);
+                    ajax.open("GET", "servidor.php?id_uf="+id_uf, true);
+                    ajax.send();
+                }
+                
+                function carregarBairros(id_cidade){
+                    var ajax;
+                    ajax = new XMLHttpRequest();
+                    ajax.onreadystatechange = function(){
+                        if (ajax.readyState == 4 && ajax.status == 200){
+                            var resp = ajax.responseText;
+                            var split = resp.split(">", 2);
+                            //alert(split[1]);
+                            var obj = JSON.parse(split[1]);
+                            //alert(obj);
+                            $("#inputbairro").autocomplete("option", "source", obj);
+                        }
+                    };
+                    //alert("servidor.php?id_cidade="+id_cidade);
+                    ajax.open("GET", "servidor.php?id_cidade="+id_cidade, true);
+                    ajax.send();
+                }
+                
+                
+                function carregarLogradouros(id_bairro){
+                    var ajax;
+                    ajax = new XMLHttpRequest();
+                    ajax.onreadystatechange = function(){
+                        if (ajax.readyState == 4 && ajax.status == 200){
+                            var resp = ajax.responseText;
+                            var split = resp.split(">", 2);
+                            //alert(split[1]);
+                            var obj = JSON.parse(split[1]);
+                            //alert(obj);
+                            $("#inputlogradouro").autocomplete("option", "source", obj);
+                        }
+                    };
+                    //alert("servidor.php?id_uf="+id_uf);
+                    ajax.open("GET", "servidor.php?id_bairro="+id_bairro, true);
+                    ajax.send();
+                }
+                
+                */
+    
+
+
+                $("document").ready(function(){
+                    
+                    carregarEstados();
+                    
+                    $("#inputestado").autocomplete({
+                            change: function(event, ui){
+                                var id_uf = ui.item.value;
+                                carregarCidades(id_uf);
+                            }
+                        });
+                        
+                    $("#inputcidade").autocomplete({
+                            change: function(event, ui){
+                                var id_cidade = ui.item.value;
+                                carregarBairros(id_cidade);
+                            }
+                        
+                    });
+                    
+                    $("#inputbairro").autocomplete({
+                            change: function(event, ui){
+                                var id_bairro = ui.item.value;
+                                carregarLogradouros(id_bairro);
+                            }
+                        
+                    });
+                    
+                    $("#inputlogradouro").autocomplete({
+                            change: function(event, ui){
+                                
+                            }
+                        
+                    });
+                     
+                });
+            
+                
+
+
+            </script>
+    </body>
+</html>

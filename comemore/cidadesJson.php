@@ -1,4 +1,6 @@
-<?php function cidades_Json($id_uf) {
+<?php 
+
+    function cidades_Json($id_uf) {
     include 'conectacomemore.php';
     $stmt = $con->prepare('SELECT ds_cidade as label, id_cidade as value FROM tb_cidade where tb_uf_id_uf = :id_uf');
     //$id_uf = 'PA';
@@ -11,7 +13,8 @@
     }
     //var_dump($cidades);
     echo json_encode($cidades);
-}
+    }
+$id_uf = $_REQUEST['id_uf'];
+cidades_Json($id_uf);
 
-cidades_Json('DF');
 ?>

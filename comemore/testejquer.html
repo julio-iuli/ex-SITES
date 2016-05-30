@@ -1,0 +1,16 @@
+<script type='text/javascript' src='js/jquery-1.12.3.js'></script>
+<script type="text/javascript">
+    $('document').ready(function(){
+        $("#btn").click(function(){
+            $.post("cidadesJson.php", "id_uf=PA", function(data){
+                alert(typeof data);
+                
+                $("p").html(data);
+            });
+            
+        });
+    });
+</script>
+
+<button id='btn'>botao</button>
+<p>Meu Texto</p>
