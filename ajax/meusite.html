@@ -3,9 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Meu site</title>
+        <link rel="stylesheet" type="text/css" href="js/jquery-ui.css">
         <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
-        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
         <script type="text/javascript" src="js/ajaxenderecos.js"></script>
+        <script type="text/javascript" src="js/jqueryenderecos.js"></script>
 
     </head>
     <body>
@@ -15,17 +17,20 @@
             <h2>Conteúdo apresentado</h2>
             
             <label>estado</label>
-            <input id="inputestado" type="text">
-            <input id="hiddenestado" type="hidden" name="id_uf">
+            <input id="inputestado" type="text"/>
+            <input id="hiddenestado" type="hidden" name="id_uf"/>
             
             <label>cidade</label>
-            <input id="inputcidade" type="text"/>
+            <input id="inputcidade" type="text" name="ds_cidade"/>
+            <input id="hiddencidade" type="hidden" name="id_cidade"/>
 
             <label>bairro</label>
             <input id="inputbairro" type="text" name="ds_bairro"/>
+            <input id="hiddenbairro" type="hidden" name="id_bairro"/>
 
             <label>logradouro</label>
             <input id="inputlogradouro" type="text" name="ds_logradouro"/>
+            <input id="hiddenlogradouro" type="hidden" name="id_logradouro"/>
             
             <input type="submit" value="ENVIAR"/>
             </form>
@@ -107,7 +112,7 @@
                 */
     
 
-
+/*
                 $("document").ready(function(){
                     
                     carregarEstados();
@@ -146,7 +151,7 @@
             
                 
 
-
+*/
             </script>
     </body>
 </html>
