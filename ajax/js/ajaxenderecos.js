@@ -1,3 +1,5 @@
+// Há uma gambiarra para o tratamento dos arquivos Json... por hora, fica assim mesmo
+
                 function carregarEstados(){
                     var ajax;
                     ajax = new XMLHttpRequest();
