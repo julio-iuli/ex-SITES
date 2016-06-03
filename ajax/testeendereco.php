@@ -1,11 +1,12 @@
+<?php header("Content-type: text/html; charset=utf-8") ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Teste</title>
     </head>
     <body>
-       <form action="" method="GET">
+       <form accept-charset="utf-8" action="" method="GET">
            <fieldset>
                <legend>Novo Cliente</legend>
                

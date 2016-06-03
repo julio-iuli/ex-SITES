@@ -1,11 +1,12 @@
 <?php
 
+	header('Content-Type: text/html; charset=utf-8');
+
     function getEstadosJson() {
         include "conectacomemore.php";
        $res = $con->query("SELECT ds_estado as label, id_uf as value FROM tb_uf;");
        $estados = array();
        while($row = $res->fetch(PDO::FETCH_ASSOC)){
-          $row[label] = utf8_encode($row[label]);
           $estados[] = $row;
        }
        return json_encode($estados);
@@ -17,7 +18,6 @@
         $stmt->execute(array(':id_uf' => $id_uf));
         $cidades = array();
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-            $row[label] = utf8_encode($row[label]);
             $cidades[] = $row;
         }
         return json_encode($cidades);
@@ -33,7 +33,6 @@
         $stmt->execute(array(':id_cidade' => $id_cidade));
         $bairros = array();
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-            $row[label] = utf8_encode($row[label]);
             $bairros[] = $row;
         }
         return json_encode($bairros);
@@ -48,7 +47,6 @@
         $stmt->execute(array(':id_bairro' => $id_bairro));
         $logradouros = array();
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-            $row[label] = utf8_encode($row[label]);
             $logradouros[] = $row;
         }
         return json_encode($logradouros);
